@@ -1,0 +1,18 @@
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+        vector<char> result(word1.length() + word2.length());
+        int k = 0,i = 0,j = 0;
+        while(i < word1.length() && j < word2.length()){
+            result[k++] = word1[i++];
+            result[k++] = word2[j++];
+        }
+        while(i < word1.length()){
+            result[k++] = word1[i++];
+        }
+        while(j < word2.length()){
+            result[k++] = word2[j++];
+        }
+        return string(result.begin(),result.end());
+    }
+};
